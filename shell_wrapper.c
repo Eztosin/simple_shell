@@ -16,14 +16,14 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)),
 	ssize_t gRet = 0;
 	int execCount = 0, piped = 0;
 
-	while (1 && piped == 0)
+	while (1)
 	{
 		execCount++;
 		piped = display_prompt();
 
 		/* Read input from terminal */
 		gRet = getline(&lineptr, &n, stdin);
-		if (exit_fn(lineptr, &gRet) == 0)
+		if (exit_fn(lineptr, &gRet, piped) == 0)
 			continue;
 		/* Isolate PATH */
 		path = iso_path(env);
@@ -36,7 +36,6 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)),
 		if (pathname == NULL)
 		{
 			free_pa(argv, path);
-			perror("./hsh");
 			continue;
 		}
 
