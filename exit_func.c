@@ -8,7 +8,7 @@
  * Return: 0 if the input string is simply a newline character
  * else it returns 1
  */
-int exit_fn(char *lineptr, ssize_t *gRet)
+int exit_fn(char *lineptr, ssize_t *gRet, int piped)
 {
 	int efn_Ret = 1;
 
