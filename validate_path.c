@@ -12,6 +12,9 @@ char *val_pathname(char *command, char *path)
 	char *token, *pathname, *delim = "=:";
 	struct stat sbuff;
 
+	if (command == NULL)
+		return (NULL);
+
 	if (stat(command, &sbuff) == 0)
 	{
 		return (_strdup(command));
