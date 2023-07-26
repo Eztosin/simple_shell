@@ -11,7 +11,7 @@
 
 int display_prompt(void);
 int execute(char *pathname, char **argv, char **environ);
-int exit_fn(char *lineptr, ssize_t *gRet);
+int exit_fn(char *lineptr, ssize_t *gRet, int piped);
 void free_pa(char **argv, char *path);
 char *iso_path(char **env);
 char **sh_tok(char *lineptr);
