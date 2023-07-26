@@ -14,7 +14,7 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)),
 	char *path, *pathname, **argv, *lineptr = NULL;
 	size_t n = 0;
 	ssize_t gRet = 0;
-	int i, eRet, execCount = 0, piped = 0;
+	int i, execCount = 0, piped = 0;
 
 	while (1 && piped == 0)
 	{
@@ -41,7 +41,7 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)),
 		}
 
 		/* Create child process to execute command */
-		eRet = execute(pathname, argv, env);
+		execute(pathname, argv, env);
 
 		free_pa(argv, path);
 		free(pathname);
